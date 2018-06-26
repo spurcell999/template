@@ -1,0 +1,37 @@
+#Logging Configuration
+logging:
+  level:
+    #ROOT : DEBUG
+    org.springframework.web: DEBUG
+    com.template.blueprint: DEBUG
+  #pattern:
+    #file:  "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    #console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file:  C:/apache-tomcat-8.5.31/logs/application.log
+#Server Configuration
+server:
+  tomcat:
+    accesslog:
+      enabled: true
+  port: 8080
+
+#Spring Data JPA Config. Enabling H2 Console
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /console
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database: h2
+    generate-ddl: true
+    show-sql: true
+    database-platform: H2
+  redis:
+    host: localhost
+    port: 6379
+

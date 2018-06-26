@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: Send Blueprint
+management:
+  trace:
+    http:
+      enabled: true
